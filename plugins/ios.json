@@ -48,6 +48,16 @@
                         }
                     ]
                 }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "NSAppTransportSecurity": [
+                        {
+                            "xml": "<dict><key>NSAllowsArbitraryLoads</key><true /></dict>",
+                            "count": 1
+                        }
+                    ]
+                }
             }
         }
     },
@@ -62,6 +72,9 @@
             "PACKAGE_NAME": "org.greeninfo.mobilemapstarter"
         },
         "org.apache.cordova.geolocation": {
+            "PACKAGE_NAME": "org.greeninfo.mobilemapstarter"
+        },
+        "cordova-plugin-transport-security": {
             "PACKAGE_NAME": "org.greeninfo.mobilemapstarter"
         }
     },

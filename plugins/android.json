@@ -55,6 +55,9 @@
         },
         "org.apache.cordova.file-transfer": {
             "PACKAGE_NAME": "org.greeninfo.mobilemapstarter"
+        },
+        "cordova-plugin-transport-security": {
+            "PACKAGE_NAME": "org.greeninfo.mobilemapstarter"
         }
     },
     "dependent_plugins": {}

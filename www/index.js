@@ -8,11 +8,11 @@
 
 // the Map object, default center and zoom settings
 var MAP, CACHE;
-var DEFAULT_LAT =   44.5875;
-var DEFAULT_LNG = -123.1712;
-var DEFAULT_ZOOM = 15;
-var MIN_ZOOM = 10;
-var MAX_ZOOM = 16;
+var DEFAULT_LAT =   -41.294;
+var DEFAULT_LNG = 174.353;
+var DEFAULT_ZOOM = 6;
+var MIN_ZOOM = 6;
+var MAX_ZOOM = 15;
 
 // initMap() will load this with some basemaps "terrain" and "photo"
 // using these global references you can toggle the visible basemap via selectBasemap() or using your own programming style
@@ -108,22 +108,20 @@ function initMap() {
     MAP.addLayer(ACCURACY).addLayer(LOCATION);
 
     // add the offine-enabled basemaps  L.TileLayer.Cordova
-    BASEMAPS['terrain'] = L.tileLayerCordova("http://{s}.tiles.mapbox.com/v3/greeninfo.map-fdff5ykx/{z}/{x}/{y}.jpg", {
+    BASEMAPS['terrain'] = L.tileLayerCordova("https://tiles-{s}.data-cdn.linz.govt.nz/services;key=91c6adc34ccf4bbba972395f32d07787/tiles/v4/layer=767/EPSG:3857/{z}/{x}/{y}.png", {
         subdomains:['a','b','c','d'],
-        maxZoom: 18,
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                     '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                     'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        maxZoom: 16,
+        attribution: 'Map data © <a href="http://www.linz.govt.nz">LINZ</a> and contributors, ' +
+              '<a href="http://creativecommons.org/licenses/by/3.0/nz/">CC BY 3.0 NZ</a>',
         // now the Cordova-specific options
         folder: OFFLINE_TILE_FOLDER,
         name:'Terrain'
     });
-    BASEMAPS['photo'] = L.tileLayerCordova("http://{s}.tiles.mapbox.com/v3/greeninfo.map-zudfckcw/{z}/{x}/{y}.jpg", {
+    BASEMAPS['photo'] = L.tileLayerCordova("https://tiles-{s}.data-cdn.linz.govt.nz/services;key=91c6adc34ccf4bbba972395f32d07787/tiles/v4/set=2/EPSG:3857/{z}/{x}/{y}.png", {
         subdomains:['a','b','c','d'],
-        maxZoom: 18,
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                     '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                     'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        maxZoom: 16,
+        attribution: 'Map data © <a href="http://www.linz.govt.nz">LINZ</a> and contributors, ' +
+              '<a href="http://creativecommons.org/licenses/by/3.0/nz/">CC BY 3.0 NZ</a>',
         // now the Cordova-specific options
         folder: OFFLINE_TILE_FOLDER,
         name:'Photo'
